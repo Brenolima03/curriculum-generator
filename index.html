@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Crie seu currículo profissional online gratuitamente. Gerador de currículos em PDF com templates modernos para Brasil. Fácil, rápido e seguro.">
+    <meta name="keywords" content="gerador de currículo, currículo PDF, criar currículo online, modelo de currículo">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Gerador de Currículos Online - Crie seu Currículo em PDF">
+    <meta property="og:description" content="Ferramenta gratuita para criar currículos profissionais em PDF. Simples, rápido e seguro.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://my-curriculum-generator.netlify.app/">
+    
+    <!-- Canonical Link -->
+    <link rel="canonical" href="https://my-curriculum-generator.netlify.app/">
+    
+    <!-- Sitemap -->
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/favicon.png">
+    
+    <title>Gerador de Currículos Online - Crie seu Currículo em PDF</title>
+    
+    <!-- Critical CSS (inline or referenced) -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Structured Data (Schema Markup) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Gerador de Currículos Online",
+      "description": "Crie seu currículo profissional em PDF gratuitamente com nossa ferramenta online",
+      "url": "https://my-curriculum-generator.netlify.app/",
+      "applicationCategory": "Productivity",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "BRL"
+      },
+      "inLanguage": "pt-BR"
+    }
+    </script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX'); // Replace with your Google Analytics ID
+    </script>
+    
+    <!-- Load critical scripts first (not deferred) -->
+    <script src="mask.js"></script>
+    <script src="languages.js"></script>
+    <script src="multiEntry.js"></script>
+    
+    <!-- Defer non-critical external library -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script defer src="pdf.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- SEO-Friendly Introduction Section -->
+      <section class="intro-section">
+        <h1>Gerador de Currículos Online - Crie seu Currículo em PDF</h1>
+        <p>Bem-vindo ao nosso gerador de currículos profissional e seguro. Crie um currículo atraente e moderno em poucos minutos, totalmente gratuito. Nossa ferramenta intuitiva facilita o preenchimento de suas informações pessoais, experiência profissional, formação acadêmica, idiomas e habilidades especiais. Ao final, você poderá baixar seu currículo em formato PDF pronto para enviar para empresas e recrutadores em todo o Brasil. Destaque-se no mercado de trabalho com um currículo bem estruturado e profissional.</p>
+      </section>
+
+      <!-- Personal Information Section -->
+      <section>
+        <h2>Informações Pessoais</h2>
+        <div class="section-box">
+          <label>Nome Completo:</label>
+          <input type="text" id="fullname" data-label="Nome Completo" aria-label="Nome completo">
+
+          <label>Cidade:</label>
+          <input type="text" id="city" data-label="Cidade" aria-label="Cidade">
+
+          <label>Estado:</label>
+          <select id="state" data-label="Estado" aria-label="Estado">
+            <option value="">Selecione</option>
+            <option value="AC">AC</option>
+            <option value="AL">AL</option>
+            <option value="AP">AP</option>
+            <option value="AM">AM</option>
+            <option value="BA">BA</option>
+            <option value="CE">CE</option>
+            <option value="DF">DF</option>
+            <option value="ES">ES</option>
+            <option value="GO">GO</option>
+            <option value="MA">MA</option>
+            <option value="MT">MT</option>
+            <option value="MS">MS</option>
+            <option value="MG">MG</option>
+            <option value="PA">PA</option>
+            <option value="PB">PB</option>
+            <option value="PR">PR</option>
+            <option value="PE">PE</option>
+            <option value="PI">PI</option>
+            <option value="RJ">RJ</option>
+            <option value="RN">RN</option>
+            <option value="RS">RS</option>
+            <option value="RO">RO</option>
+            <option value="RR">RR</option>
+            <option value="SC">SC</option>
+            <option value="SP">SP</option>
+            <option value="SE">SE</option>
+            <option value="TO">TO</option>
+          </select>
+
+          <label>CEP:</label>
+          <input type="text" id="cep" data-label="CEP" aria-label="CEP">
+
+          <label>Telefone:</label>
+          <input type="tel" id="telephone" data-label="Telefone" aria-label="Telefone">
+
+          <label>Email:</label>
+          <input type="email" id="email" data-label="Email" aria-label="Email">
+
+          <label>Nacionalidade:</label>
+          <input type="text" id="nationality" data-label="Nacionalidade" aria-label="Nacionalidade">
+
+          <label>Estado Civil:</label>
+          <select id="civilState" data-label="Estado Civil" aria-label="Estado civil">
+            <option>Solteiro(a)</option>
+            <option>Casado(a)</option>
+            <option>Divorciado(a)</option>
+            <option>Viúvo(a)</option>
+          </select>
+
+          <label>Filhos:</label>
+          <select id="hasChildren" data-label="Filhos" aria-label="Filhos">
+            <option>Não</option>
+            <option>Sim</option>
+          </select>
+
+          <label>Idade:</label>
+          <input type="text" id="age" data-label="Idade" aria-label="Idade">
+
+          <label>Gênero:</label>
+          <select id="gender" data-label="Gênero" aria-label="Gênero">
+            <option>Masculino</option>
+            <option>Feminino</option>
+          </select>
+
+          <label>Objetivo:</label>
+          <input type="text" id="objective" data-label="Objetivo" aria-label="Objetivo profissional">
+        </div>
+      </section>
+
+      <!-- Qualifications Section -->
+      <section>
+        <h2>Qualificações</h2>
+        <div id="qualificationsContainer"></div>
+        <button type="button" class="add-button" onclick="addQualification()">+ Adicionar Qualificação</button>
+      </section>
+
+      <!-- Education Section -->
+      <section>
+        <h2>Formação Acadêmica</h2>
+        <div id="educationContainer"></div>
+        <button class="add-button" onclick="addEducation()">+ Adicionar Formação</button>
+      </section>
+
+      <!-- Experience Section -->
+      <section>
+        <h2>Experiências Profissionais</h2>
+        <div id="experienceContainer"></div>
+        <button class="add-button" onclick="addExperience()">+ Adicionar Experiência</button>
+      </section>
+
+      <!-- Languages Section -->
+      <section>
+        <h2>Idiomas</h2>
+        <div id="languagesContainer"></div>
+        <button class="add-button" onclick="addLanguage()">+ Adicionar Idioma</button>
+      </section>
+
+      <!-- Courses Section -->
+      <section>
+        <h2>Cursos Extracurriculares</h2>
+        <div id="coursesContainer"></div>
+        <button class="add-button" onclick="addCourse()">+ Adicionar Curso</button>
+      </section>
+
+      <!-- Additional Information Section -->
+      <section>
+        <h2>Informações Adicionais</h2>
+        <div id="additionalContainer"></div>
+        <button class="add-button" onclick="addAdditional()">+ Adicionar Informação</button>
+      </section>
+
+      <!-- Generate PDF Button -->
+      <div class="generate-container">
+        <button class="generate" onclick="generatePdf()">Gerar Currículo em PDF</button>
+      </div>
+    </div>
+
+    <script>
+      function onlyLetters(e) {
+        e.target.value = e.target.value.replace(/[^a-zA-ZÀ-ÿ\s]/g,'');
+      }
+
+      function addCourse(){ addMultiEntry('coursesContainer'); }
+      function addAdditional(){ addMultiEntry('additionalContainer'); }
+
+      document.getElementById('cep').addEventListener('input', maskCEP);
+      document.getElementById('telephone').addEventListener('input', maskTelephone);
+      ['fullname','city','nationality'].forEach(id => 
+        document.getElementById(id).addEventListener('input', onlyLetters)
+      );
+
+      window.addEventListener('DOMContentLoaded', () => {
+        loadLanguages();
+        addQualification();
+        addEducation();
+        addExperience();
+        addCourse();
+        addAdditional();
+        addLanguage();
+      });
+    </script>
+  </body>
+</html>
